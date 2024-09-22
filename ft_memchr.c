@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 02:04:04 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/19 02:06:44 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:12:19 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    *ft_memchr(const void *s, int c, size_t n)
     while (newstr[i] != a && i < n)
         i++;
     if (newstr[i] == a)
-        return (newstr[i]);
+        return (newstr);
     else
         return (0);
 }

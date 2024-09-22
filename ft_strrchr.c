@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:51:11 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/19 01:54:00 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:17:11 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char    *ft_strrchr(const char *s, int c)
     while (i > 0 && newstr[i] != a)
         i--;
     if (newstr[i] == a)
-        return (newstr[i]);
+        return (newstr);
     else
         return (0);
 }

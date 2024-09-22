@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anruiz-d <anruiz-d@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:27:45 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/16 15:41:47 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:19:08 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_toupper(int	ch)
 		ch -= 32;
 	return (ch);
 }
-
+/*
 int	main()
 {
 	char	a;
@@ -28,3 +28,4 @@ int	main()
 	a = 'H';
 	printf("%d\n", ft_toupper(a));
 }
+*/

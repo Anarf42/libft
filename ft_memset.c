@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:22:17 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/19 01:25:24 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:00:29 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void    *ft_memset(void *s, int c, size_t n)
         a++;
         n--;
     }
-    return (a);
+    return (s);
 }
