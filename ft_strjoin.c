@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Ana <Ana@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 02:49:26 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/25 11:12:10 by Ana              ###   ########.fr       */
+/*   Created: 2024/09/25 11:28:54 by Ana               #+#    #+#             */
+/*   Updated: 2024/09/25 11:59:32 by Ana              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    size_t  i;
-    int sign;
-    int res;
+	size_t	i;
+	size_t	n;
+	size_t	a;
+	char	*newstr;
 
-    i = 0;
-    sign = 1;
-    res = 0;
-    while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-        i++;
-    if(str[i] == '-' || str[i] == '+')
-    {
-        if (str[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (ft_isdigit(str[i]))
-    {
-        res = (res * 10) + (str[i] - '0');
-        i++;
-    }
-    return (res * sign);
+	i = ft_strlen(s1);
+	n = ft_strlen(s2);
+	a = i + n + 1;
+	newstr = (char *)malloc(sizeof(char) * (a));
+	if (!newstr)
+		return (NULL);
+	ft_strlcpy(newstr, s1, i + 1);
+	ft_strlcat(newstr, s2, a);
+	return (newstr);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: Ana <Ana@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:32:59 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/19 02:43:56 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/25 11:05:56 by Ana              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
     }
     return (0);
 }
-
+/*
 int main (void)
 {
     const char *largestring = "Foo Bar Baz";
@@ -52,3 +52,4 @@ int main (void)
     return (0);
 
 }
+*/
