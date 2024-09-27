@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 02:49:26 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/27 01:10:40 by anruiz-d         ###   ########.fr       */
+/*   Created: 2024/09/26 22:31:08 by anruiz-d          #+#    #+#             */
+/*   Updated: 2024/09/27 02:32:04 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	int		sign;
-	int		res;
-
-	i = 0;
-	sign = 1;
-	res = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (n == -2147483648)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n / 10 * (-1), fd);
+		ft_putnbr_fd(n % 10 * (-1), fd);
 	}
-	while (ft_isdigit(str[i]))
+	else if (n < 0)
 	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	return (res * sign);
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putnbr_fd(n + '0', fd);
 }

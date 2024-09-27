@@ -6,18 +6,15 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:42:37 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/16 16:20:55 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/27 02:13:06 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_tolower(int ch)
 {
 	if (ch >= 65 && ch <= 90)
 		ch += 32;
-	return (ch);	
+	return (ch);
 }
-
