@@ -6,6 +6,7 @@ SRC_FILES	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
 				ft_strrchr.c ft_tolower.c ft_toupper.c ft_substr.c ft_strjoin.c	 \
 			 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+				ft_strtrim.c
 
 OBJ_FILES	= $(SRC_FILES:.c=.o)
 
@@ -14,6 +15,10 @@ CFLAGS = -Wall -Werror -Wextra
 INCLUDE	= -I include
 AR = ar rcs
 RM = rm -rf
+
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES)
+#	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
 
 all: $(NAME)
 
@@ -31,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
