@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:02:48 by Ana               #+#    #+#             */
-/*   Updated: 2024/09/27 12:40:44 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/09/29 18:49:44 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	len;
+	size_t	start;
+	size_t	end;
 
-	i = 0;
-	len = ft_strlen(s1);
-	while (s1[i] && s1[i] == set[i])
-		i++;
-	if (s1[len] == set[len])
-	{
-		while (s1[len] == set[len] && len > 0)
-		    len--;
-	}
-	return (ft_substr(s1, i, len));
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(&s1[start]);
+	if (end != 0)
+		while (s1[start + end - 1] && ft_strchr(set, s1[start + end - 1]))
+			end--;
+	return (ft_substr(s1, start, end));
 }
