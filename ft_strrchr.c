@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:51:11 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/27 02:06:50 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/10/01 05:04:57 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,15 @@ char	*ft_strrchr(const char *s, int c)
 	newstr = (char *)s;
 	a = (char)c;
 	i = ft_strlen(newstr);
-	while (i > 0 && newstr[i] != a)
+	if (!a)
+		return (newstr + i);
+	while (i != 0)
+	{
+		if (newstr[i] == a)
+			return (newstr + i);
 		i--;
-	if (newstr[i] == a)
+	}
+	if (newstr[0] == a)
 		return (newstr);
-	else
-		return (0);
+	return (0);
 }

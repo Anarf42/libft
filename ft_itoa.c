@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 18:55:18 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/30 15:12:36 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/10/01 04:59:06 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ char	*ft_itoa(int n)
 	i = 0;
 	num = n;
 	len = lenght_num(num);
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	str[len] = '\0';
 	if (num < 0)
