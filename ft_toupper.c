@@ -6,7 +6,7 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:27:45 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/27 02:12:09 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/10/06 14:31:12 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_toupper(int ch)
 		ch -= 32;
 	return (ch);
 }
-/*
-int	main()
-{
-	char	a;
-
-	a = 'H';
-	printf("%d\n", ft_toupper(a));
-}
-*/

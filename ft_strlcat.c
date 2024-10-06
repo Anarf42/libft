@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ana <Ana@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 01:42:32 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/09/27 02:00:43 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/10/07 00:45:42 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,54 +16,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	l;
+	size_t	len_src;
 
+	if (dstsize <= ft_strlen(dst))
+		return (ft_strlen(src) + dstsize);
 	i = 0;
-	l = 0;
-	while (dst[i])
+	len_src = ft_strlen(src);
+	while (dst[i] && i < dstsize)
 		i++;
-	while (src[l] && l < dstsize - 1)
+	l = i;
+	while (src[i - l] && i < dstsize - 1)
 	{
-		dst[i] = src[l];
+		dst[i] = src[i - l];
 		i++;
-		l++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (l + len_src);
 }
-/*
-#include "libft.h"
-
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-    size_t  dst_len;
-    size_t  src_len;
-    size_t  i;
-    size_t  j;
-
-    dst_len = 0;
-    src_len = 0;
-    while (dst[dst_len] && dst_len < dstsize)  
-	// Obtén la longitud de dst sin exceder dstsize
-        dst_len++;
-    src_len = ft_strlen(src);  // Longitud de src
-
-// Si el tamaño del buffer es menor o igual que dst_len, 
-//no hay espacio para concatenar
-    if (dstsize <= dst_len)
-        return (dstsize + src_len);
-
-    i = dst_len;
-    j = 0;
-    while (src[j] && i < dstsize - 1)  
-// Concatenar src a dst sin exceder dstsize - 1
-    {
-        dst[i] = src[j];
-        i++;
-        j++;
-    }
-    dst[i] = '\0';  // Añadir el terminador nulo al final de dst
-
-    return (dst_len + src_len);  
-// Longitud total que habrían tenido las cadenas combinadas
-}
-*/
