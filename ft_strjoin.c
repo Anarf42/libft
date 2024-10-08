@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Ana <Ana@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:28:54 by Ana               #+#    #+#             */
-/*   Updated: 2024/09/27 01:57:47 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:45:08 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	a;
 	char	*newstr;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = ft_strlen(s1);
 	n = ft_strlen(s2);
 	a = i + n + 1;
