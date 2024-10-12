@@ -6,13 +6,13 @@
 /*   By: anruiz-d <anruiz-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:15:06 by anruiz-d          #+#    #+#             */
-/*   Updated: 2024/10/06 09:28:44 by anruiz-d         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:18:38 by anruiz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*newstr1;
 	unsigned char	*newstr2;

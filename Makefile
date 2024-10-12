@@ -10,20 +10,16 @@ SRC_FILES	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 
 OBJ_FILES	= $(SRC_FILES:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 INCLUDE	= -I include
 AR = ar rcs
 RM = rm -rf
 
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES)
-#	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
-
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-			$(AR) $(NAME) $(OBJ_FILES)  # Cambiado para crear una biblioteca estática
+			$(AR) $(NAME) $(OBJ_FILES)
 			
 %.o: %.c
 			$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
